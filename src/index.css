@@ -1,13 +1,283 @@
+/* =====================
+ Global Styles
+===================== */
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: #000;
+  color: #fff;
+  font-family: "Cinzel", serif;
+  scroll-behavior: smooth;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.text-gold {
+  color: #d4af37 !important;
+  letter-spacing: 2px;
+}
+
+.bg-gold {
+  background-color: #d4af37 !important;
+}
+
+.text-gold {
+  color: #d4af37; /* Luxury gold */
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, #d4af37, #b8860b);
+  border: none;
+  color: #000;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-gold:hover {
+  background: linear-gradient(135deg, #b8860b, #d4af37);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+form .form-control {
+  font-size: 1rem;
+  padding: 12px 10px;
+}
+
+form .form-control:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: #d4af37;
+}
+
+/* =====================
+ Buttons
+===================== */
+.btn-gold {
+  background: linear-gradient(135deg, #d4af37, #b8860b);
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  padding: 12px 25px;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-gold:hover {
+  background: linear-gradient(135deg, #b8860b, #d4af37);
+  color: #fff;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0px 8px 20px rgba(212, 175, 55, 0.4);
+}
+
+.btn-outline-gold {
+  border: 2px solid #d4af37;
+  color: #d4af37;
+  font-weight: bold;
+  padding: 12px 25px;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-outline-gold:hover {
+  background: #d4af37;
+  color: #000;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0px 6px 15px rgba(212, 175, 55, 0.3);
+}
+
+/* =====================
+ Borders & Highlights
+===================== */
+.border-gold {
+  border: 1px solid #d4af37 !important;
+  border-radius: 10px;
+}
+
+.gold-divider {
+  width: 80px;
+  height: 4px;
+  background: #d4af37;
+  margin: 15px auto;
+  border-radius: 2px;
+}
+
+/* =====================
+ Hero Section
+===================== */
+.hero {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-img {
+  height: 100vh;
+  object-fit: cover;
+  filter: brightness(70%) contrast(110%);
+  transition: transform 8s ease;
+}
+
+.hero:hover .hero-img {
+  transform: scale(1.1);
+}
+
+/* Overlay */
+.hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.8));
+  z-index: 1;
+}
+
+/* Caption glassmorphism */
+.carousel-caption {
+  bottom: 40%;
+  z-index: 2;
+  max-width: 750px;
+  text-shadow: 0px 0px 25px rgba(0, 0, 0, 0.95);
+}
+
+.caption-box {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.6);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =====================
+ Navbar
+===================== */
+.navbar {
+  padding: 15px 20px;
+  transition: all 0.3s ease;
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+}
+
+.navbar-nav .nav-link {
+  color: #fff;
+  font-weight: 600;
+  margin: 0 12px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: #d4af37;
+}
+
+/* Fancy underline animation */
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #d4af37;
+  transition: width 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+  width: 100%;
+}
+
+/* Active nav link style */
+.navbar-nav .nav-link.active {
+  color: #d4af37 !important;
+  text-shadow: 0px 0px 8px rgba(212, 175, 55, 0.6);
+}
+
+/* =====================
+ Collections (Cards/Grids)
+===================== */
+.collection-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 15px;
+  transition: all 0.4s ease-in-out;
+  overflow: hidden;
+}
+
+.collection-card img {
+  transition: transform 0.5s ease;
+}
+
+.collection-card:hover img {
+  transform: scale(1.08);
+}
+
+.collection-card:hover {
+  border: 1px solid #d4af37;
+  box-shadow: 0px 10px 25px rgba(212, 175, 55, 0.2);
+  transform: translateY(-10px);
+}
+
+/* =====================
+ Contact Map Placeholder
+===================== */
+.map-placeholder {
+  height: 100%;
+  background: rgba(212, 175, 55, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 2px dashed #d4af37;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* =====================
+ Responsive Design
+===================== */
+@media (max-width: 992px) {
+  .navbar-nav {
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .navbar-nav .nav-link {
+    margin: 10px 0;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 70vh;
+  }
+
+  .hero-img {
+    height: 0vh;
+  }
+
+  .carousel-caption {
+    bottom: 25%;
+    font-size: 0.7rem;
+    padding: 0 1rem;
+  }
+
+  .caption-box {
+    padding: 1rem;
+  }
+
+  .btn-gold, .btn-outline-gold {
+    padding: 10px 18px;
+    font-size: 0.85rem;
+  }
 }
